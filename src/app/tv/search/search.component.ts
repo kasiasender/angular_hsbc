@@ -12,12 +12,15 @@ import 'rxjs/add/operator/map';
 export class SearchComponent implements OnInit {
   shows: Show[] = [];
 
-  constructor(tv: TvmazeService) {
-    tv.seachShows('flash')
-      .subscribe(shows => this.shows = shows);
+  constructor(private tv: TvmazeService) {
   }
 
   ngOnInit() {
+  }
+
+  search(query: string) {
+    this.tv.seachShows(query)
+      .subscribe(shows => this.shows = shows);
   }
 
 }

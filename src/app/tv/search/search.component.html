@@ -5,6 +5,12 @@
 
   <div class="column">
     <h2 class="subtitle">Find your shows</h2>
+    <div class="control">
+      <input type="search" class="input" #queryRef>
+    </div>
+    <div class="control">
+      <button class="button is-primary" (click)="search(queryRef.value)">Search</button>
+    </div>
     <div class="columns is-multiline">
       <div *ngFor="let show of shows" class="column is-4">
         <img [src]="show.image.original" alt="">
