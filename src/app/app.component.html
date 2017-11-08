@@ -2,9 +2,9 @@
   <div class="container">
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a href="/" class="navbar-item is-tab is-active">Home</a>
-        <a href="/tv" class="navbar-item">TV shows</a>
-        <a href="/contact" class="navbar-item">Contact</a>
+        <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" class="navbar-item is-tab">Home</a>
+        <a routerLink="/tv" routerLinkActive="is-active" class="navbar-item is-tab">TV shows</a>
+        <a routerLink="/contact" routerLinkActive="is-active" class="navbar-item is-tab">Contact</a>
       </div>
     </div>
   </div>
