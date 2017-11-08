@@ -1,11 +1,12 @@
 import { Show } from './../tv.models';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { get } from 'lodash';
 
 @Component({
   selector: 'tm-poster',
   templateUrl: './poster.component.html',
   styleUrls: ['./poster.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class PosterComponent implements OnInit {
   @Input() show: Show;
