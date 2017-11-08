@@ -15,8 +15,7 @@
     </form>
     <div class="columns is-multiline">
       <div *ngFor="let show of shows" class="column is-4">
-        <img [src]="show.image.original" alt="">
-        {{show.name}}
+        <tm-poster [show]="show" size="lg"></tm-poster>
       </div>
     </div>
   </div>

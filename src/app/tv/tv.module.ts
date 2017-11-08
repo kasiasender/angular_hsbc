@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
+import { PosterComponent } from './poster/poster.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { SearchComponent } from './search/search.component';
   providers: [
     TvmazeService
   ],
-  declarations: [SearchComponent]
+  declarations: [SearchComponent, PosterComponent]
 })
 export class TvModule { }
