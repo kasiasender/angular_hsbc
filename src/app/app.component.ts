@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'tm-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'tm';
+
+  handleClick(event: MouseEvent) {
+    this.title = this.title + event.clientX;
+  }
+}
