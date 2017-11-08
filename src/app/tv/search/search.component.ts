@@ -11,8 +11,10 @@ import 'rxjs/add/operator/map';
 })
 export class SearchComponent implements OnInit {
   shows: Show[] = [];
+  query = 'flash';
 
   constructor(private tv: TvmazeService) {
+    this.search(this.query);
   }
 
   ngOnInit() {
