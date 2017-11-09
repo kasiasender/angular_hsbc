@@ -1,3 +1,4 @@
+import { ShowDetailsResolver } from './tv/show-details/show-details.resolver';
 import { ShowDetailsComponent } from './tv/show-details/show-details.component';
 import { SearchComponent } from './tv/search/search.component';
 import { Page404Component } from './page404/page404.component';
@@ -13,7 +14,13 @@ export interface ShowDetailsParams {
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'tv', component: SearchComponent},
-  {path: 'tv/:id', component: ShowDetailsComponent},
+  {
+    path: 'tv/:id',
+    component: ShowDetailsComponent,
+    resolve: {
+      show: ShowDetailsResolver
+    }
+  },
   {path: 'contact', component: ContactComponent},
   {path: '**', component: Page404Component}
 ];

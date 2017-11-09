@@ -1,3 +1,4 @@
+import { ShowDetailsResolver } from './show-details/show-details.resolver';
 import { RouterModule } from '@angular/router';
 import { BookmarksModule } from './../bookmarks/bookmarks.module';
 import { TvmazeService } from './tvmaze.service';
@@ -18,7 +19,8 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
     BookmarksModule
   ],
   providers: [
-    TvmazeService
+    TvmazeService,
+    ShowDetailsResolver
   ],
   declarations: [SearchComponent, PosterComponent, ShowDetailsComponent]
 })

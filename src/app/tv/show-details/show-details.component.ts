@@ -12,11 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ShowDetailsComponent implements OnInit {
   show: Show;
 
-  constructor(private route: ActivatedRoute,
-              private tv: TvmazeService) {
-    const {id} = this.route.snapshot.params as ShowDetailsParams;
-    this.tv.getShow(id)
-      .subscribe(show => this.show = show);
+  constructor(private route: ActivatedRoute) {
+    this.show = this.route.snapshot.data.show;
   }
 
   ngOnInit() {
