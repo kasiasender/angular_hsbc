@@ -26,7 +26,7 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
     canActivate: [
-      LoggedInGuard
+      // LoggedInGuard
     ]
   },
   {path: '**', component: Page404Component}
