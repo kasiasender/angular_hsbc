@@ -1,3 +1,4 @@
+import { LoggedInGuard } from './logged-in.guard';
 import { ShowDetailsResolver } from './tv/show-details/show-details.resolver';
 import { ShowDetailsComponent } from './tv/show-details/show-details.component';
 import { SearchComponent } from './tv/search/search.component';
@@ -21,7 +22,13 @@ const routes: Routes = [
       show: ShowDetailsResolver
     }
   },
-  {path: 'contact', component: ContactComponent},
+  {
+    path: 'contact',
+    component: ContactComponent,
+    canActivate: [
+      LoggedInGuard
+    ]
+  },
   {path: '**', component: Page404Component}
 ];
 

@@ -1,3 +1,4 @@
+import { LoggedInGuard } from './logged-in.guard';
 import { TvModule } from './tv/tv.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,7 +23,9 @@ import { Page404Component } from './page404/page404.component';
     AppRoutingModule,
     TvModule
   ],
-  providers: [],
+  providers: [
+    LoggedInGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
