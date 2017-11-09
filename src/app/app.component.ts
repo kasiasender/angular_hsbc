@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 interface MenuItem {
   path: string;
@@ -18,6 +19,17 @@ export class AppComponent {
     {path: '/tv', label: 'TV Shows'},
     {path: '/contact', label: 'Contact'}
   ];
+  loading = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(e => {
+      if (e instanceof NavigationStart) {
+        this.loading = true;
+      } else if (e instanceof NavigationEnd) {
+        this.loading = false;
+      }
+    });
+  }
 
   handleClick(event: MouseEvent) {
     this.title = this.title + event.clientX;
