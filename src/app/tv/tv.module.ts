@@ -1,3 +1,4 @@
+import { BookmarksModule } from './../bookmarks/bookmarks.module';
 import { TvmazeService } from './tvmaze.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,7 +11,8 @@ import { PosterComponent } from './poster/poster.component';
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BookmarksModule
   ],
   providers: [
     TvmazeService
