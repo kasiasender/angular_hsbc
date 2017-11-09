@@ -5,7 +5,9 @@
   </tm-poster>
 
   <div class="column">
-    <h1 class="title">{{show.name}}</h1>
-    <section>{{show.summary}}</section>
+    <h1 class="title">{{show?.name}}</h1>
+    <section [innerHTML]="show?.summary"></section>
   </div>
 </div>
+
+<!-- .columns>tm-poster+.column>h1.title+section -->
