@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { Page404Component } from './page404/page404.component';
+import { SubmitIfValidComponent } from './submit-if-valid/submit-if-valid.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { Page404Component } from './page404/page404.component';
     AppComponent,
     HomeComponent,
     ContactComponent,
-    Page404Component
+    Page404Component,
+    SubmitIfValidComponent
   ],
   imports: [
     BrowserModule,

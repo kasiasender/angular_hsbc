@@ -28,6 +28,7 @@
     <div class="field">
       <div class="control">
         <button [disabled]="formRef.invalid" class="button is-primary is-pulled-right">Send</button>
+        <tm-submit-if-valid [form]="formRef"></tm-submit-if-valid>
       </div>
     </div>
   </form>
