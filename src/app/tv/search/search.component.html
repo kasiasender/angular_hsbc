@@ -1,6 +1,12 @@
 <div class="columns">
   <div class="column is-3">
     <h2 class="subtitle">Bookmarks</h2>
+    <div class="columns is-multiline">
+      <tm-poster *ngFor="let bookmark of bookmarks"
+       class="column is-6"
+       [show]="bookmark">
+      </tm-poster>
+    </div>
   </div>
 
   <div class="column">
@@ -16,7 +22,12 @@
     <div class="columns is-multiline">
       <div *ngFor="let show of shows" class="column is-4">
         <tm-poster [show]="show" size="lg">
-          <button class="button is-primary is-small">save</button>
+          <button class="button is-primary is-small"
+           type="button"
+           (click)="saveBookmark(show)"
+           [disabled]="isBookmarked(show)">
+           save
+          </button>
         </tm-poster>
       </div>
     </div>
