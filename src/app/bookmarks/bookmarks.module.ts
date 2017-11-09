@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BookmarksService } from './bookmarks.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +7,8 @@ import { BookmarkRemoveComponent } from './bookmark-remove/bookmark-remove.compo
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     BookmarksService
