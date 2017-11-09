@@ -28,14 +28,6 @@ export class SearchComponent implements OnInit {
       .subscribe(shows => this.shows = shows);
   }
 
-  saveBookmark(bookmark: Show) {
-    this.bs.add(bookmark);
-  }
-
-  isBookmarked(bookmark: Show): boolean {
-    return this.bs.has(bookmark.id);
-  }
-
   get bookmarks(): Show[] {
     return this.bs.getAll() as Show[];
   }
