@@ -1,30 +1,33 @@
 <div class="columns">
-  <form class="column is-6 is-offset-3">
+  <form #formRef="ngForm" class="column is-6 is-offset-3">
     <h2 class="title">Contact us</h2>
 
     <div class="field">
       <label for="email" class="label">E-mail</label>
       <div class="control">
-        <input id="email" type="email" class="input is-danger">
+        <input #emailRef="ngModel" email required minlength="4" [(ngModel)]="contact.email" id="email" name="email" type="email"
+         class="input" [class.is-danger]="emailRef.dirty && emailRef.invalid">
       </div>
-      <p class="help is-danger">
-        Error, error!
-      </p>
+      <div class="help is-danger" *ngIf="emailRef.dirty && emailRef.invalid">
+        <p *ngIf="emailRef.errors.required">This field is required</p>
+        <p *ngIf="emailRef.errors.minlength">Enter more characters</p>
+        <p *ngIf="emailRef.errors.email">Enter a correct e-mail address</p>
+      </div>
     </div>
 
-    <div class="field">
+    <!-- <div class="field">
       <label for="message" class="label">Message</label>
       <div class="control">
-        <textarea id="message" class="textarea is-danger"></textarea>
+        <textarea [(ngModel)]="contact.message" id="message" name="messsage" class="textarea is-danger"></textarea>
       </div>
       <p class="help is-danger">
         Error, error!
       </p>
-    </div>
+    </div> -->
 
     <div class="field">
       <div class="control">
-        <button disabled class="button is-primary is-pulled-right">Send</button>
+        <button [disabled]="formRef.invalid" class="button is-primary is-pulled-right">Send</button>
       </div>
     </div>
   </form>

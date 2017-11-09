@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { LoggedInGuard } from './logged-in.guard';
 import { TvModule } from './tv/tv.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,6 +22,7 @@ import { Page404Component } from './page404/page404.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     TvModule
   ],
   providers: [
