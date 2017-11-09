@@ -1,4 +1,8 @@
 <ng-content select=".header"></ng-content>
 <img [src]="posterUrl" alt="">
 <ng-content></ng-content>
-<h2 class="subtitle">{{show.name}}</h2>
+<h2 class="subtitle">
+  <a routerLink="/tv/{{show.id}}">
+    {{show.name}}
+  </a>
+</h2>

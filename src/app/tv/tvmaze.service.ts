@@ -15,6 +15,11 @@ export class TvmazeService {
     const url = `${this.baseUrl}search/shows?q=${query}`;
     return this.http.get<ShowResponse[]>(url)
       .map(showsResponse => showsResponse.map(({show}) => show));
+    }
+
+  getShow(id: number): Observable<Show> {
+    const url = `${this.baseUrl}shows/${id}`;
+    return this.http.get<Show>(url);
   }
 
 }
