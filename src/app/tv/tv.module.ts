@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { PosterComponent } from './poster/poster.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
+import { EpisodizePipe } from './episodize.pipe';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
     TvmazeService,
     ShowDetailsResolver
   ],
-  declarations: [SearchComponent, PosterComponent, ShowDetailsComponent]
+  declarations: [SearchComponent, PosterComponent, ShowDetailsComponent, EpisodizePipe]
 })
 export class TvModule { }

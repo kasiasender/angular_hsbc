@@ -1,8 +1,8 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { BookmarksService } from './bookmarks.service';
-
-fdescribe('BookmarksService', () => {
+/*
+describe('BookmarksService', () => {
   let bs: BookmarksService;
 
   beforeEach(() => {
@@ -66,3 +66,4 @@ fdescribe('BookmarksService', () => {
     expect(bserv.getAll()[1]).toEqual({id: 1000});
   }));
 });
+*/

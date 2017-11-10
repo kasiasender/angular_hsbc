@@ -5,8 +5,25 @@
   </tm-poster>
 
   <div class="column">
-    <h1 class="title">{{show?.name}}</h1>
-    <section [innerHTML]="show?.summary"></section>
+    <h1 class="title">{{show.name}}</h1>
+    <section [innerHTML]="show.summary"></section>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>number</th>
+          <th>name</th>
+          <th>runtime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let episode of show._embedded.episodes">
+          <td>{{episode | episodize:maxEpisodesNumber}}</td>
+          <td>{{episode.name}}</td>
+          <td>{{episode.runtime}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

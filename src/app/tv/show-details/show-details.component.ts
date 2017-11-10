@@ -1,4 +1,4 @@
-import { Show } from './../tv.models';
+import { Show, ShowDetails } from './../tv.models';
 import { TvmazeService } from './../tvmaze.service';
 import { ShowDetailsParams } from './../../app-routing.module';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./show-details.component.css']
 })
 export class ShowDetailsComponent implements OnInit {
-  show: Show;
+  show: ShowDetails;
 
   constructor(private route: ActivatedRoute) {
     this.show = this.route.snapshot.data.show;
@@ -19,4 +19,8 @@ export class ShowDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  get maxEpisodesNumber(): number {
+    return this.show._embedded.episodes
+      .some(({number}) => number > 99) ? 3 : 2;
+  }
 }
