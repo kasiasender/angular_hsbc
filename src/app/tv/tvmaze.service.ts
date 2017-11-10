@@ -18,7 +18,7 @@ export class TvmazeService {
     }
 
   getShow(id: number): Observable<Show> {
-    const url = `${this.baseUrl}shows/${id}`;
+    const url = `${this.baseUrl}shows/${id}?embed=episodes`;
     return this.http.get<Show>(url);
   }
 
