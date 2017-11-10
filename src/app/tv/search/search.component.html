@@ -12,12 +12,12 @@
 
   <div class="column">
     <h2 class="subtitle">Find your shows</h2>
-    <form>
+    <form [formGroup]="searchForm">
       <div class="control">
-        <input type="search" class="input" [(ngModel)]="query" name="query">
+        <input formControlName="query" type="search" class="input" name="query">
       </div>
       <div class="control">
-        <button class="button is-primary" (click)="search(query)">Search</button>
+        <button class="button is-primary" (click)="search()">Search</button>
       </div>
     </form>
     <div class="columns is-multiline">

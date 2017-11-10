@@ -5,7 +5,7 @@ import { TvmazeService } from './tvmaze.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { PosterComponent } from './poster/poster.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
@@ -15,7 +15,7 @@ import { EpisodizePipe } from './episodize.pipe';
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     BookmarksModule
   ],

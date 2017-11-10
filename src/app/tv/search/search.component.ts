@@ -5,6 +5,8 @@ import { Show, ShowResponse } from './../tv.models';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'tm-search',
@@ -13,11 +15,21 @@ import 'rxjs/add/operator/map';
 })
 export class SearchComponent implements OnInit {
   shows: Show[] = [];
-  query = 'flash';
+  // query = 'flash';
+  searchForm: FormGroup;
 
   constructor(private tv: TvmazeService,
-    private bs: BookmarksService) {
-    this.search(this.query);
+              private bs: BookmarksService,
+              private fb: FormBuilder) {
+    this.searchForm = this.fb.group({
+      query: ['flash']
+    });
+
+    this.search(this.searchForm.controls.query.value);
+
+    this.searchForm.controls.query.valueChanges
+      .debounceTime(200)
+      .subscribe(query => this.search(query));
   }
 
   ngOnInit() {
