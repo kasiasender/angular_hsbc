@@ -1,3 +1,4 @@
+import { version } from '../environments/environment';
 import { Component } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
@@ -20,6 +21,7 @@ export class AppComponent {
     {path: '/contact', label: 'Contact'}
   ];
   loading = false;
+  version = version;
 
   constructor(private router: Router) {
     this.router.events.subscribe(e => {

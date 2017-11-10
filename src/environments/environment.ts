@@ -6,3 +6,5 @@
 export const environment = {
   production: false
 };
+
+export const version = '1.0.1296-build-32';
